@@ -20,12 +20,6 @@ Funções
 
 Arrays e objetos
 
-Organização
-
-01-fundamentos/: exercícios sobre os conceitos básicos da linguagem.
-
-02-loops/: exercícios com estruturas de repetição.
-
 Objetivo
 
 Praticar programação, desenvolver o raciocínio lógico e documentar minha evolução como estudante de Ciências da Computação.
