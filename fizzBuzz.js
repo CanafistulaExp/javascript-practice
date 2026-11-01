@@ -1,32 +1,38 @@
-let num = 73;
+let num = 23;
 //Atualização do código
 function fizzBuzz(num){
-
+    //Decidi incluir um array para essa questão mesmo não sendo solicitado no exercício.
+    let arr = [];
+    
     console.log('Welcome to FizzBuzz!');
-
+    
     for (let i = 1; i <= num; i++){
+    
         //O desafio solicitou a inclusão dessa condição e eu coloquei o comando parseInt para garantir o resultado certo.
-        if(String(i).includes('3') && parseInt(i) % 3 != 0 && parseInt(i) % 7 != 0){
+        if(String(i).includes('3') && (i) % 3 != 0 && (i) % 7 != 0){
 
-            console.log('Almost Fizz');
+            arr[i-1] = "Almost Fizz";
 
-        } else if (parseInt(i) % 3 == 0 && parseInt(i) % 7 == 0){
+        } else if (i % 3 == 0 && i % 7 == 0){
+            arr[i-1] = 'FizzBuzz';
 
-            console.log('FizzBuzz');
+        } else if (i % 3 == 0){
 
-        } else if (parseInt(i) % 3 == 0){
+            arr[i-1] = 'Fizz'
 
-            console.log('Fizz');
+        } else if (i % 7 == 0){
 
-        } else if (parseInt(i) % 7 == 0){
-
-            console.log('Buzz');
+            arr[i-1] = 'Buzz'
 
         } else{
 
-            console.log(i);
+            arr[i-1] = i
+    
         }
+        console.log(arr[i-1]);
     }
+    
+    return arr;
 }
 
 fizzBuzz(num);
