@@ -1,27 +1,48 @@
-const compras = ["Arroz", "Feijão", "Carne", "Temperos"];
+const compras = [];
 
-function rastreaCompras(listaCompras, adicionaItem = "", removeItem = -1) {
+function viewList() {
+
+    if (compras.length === 0) {
     
-  console.log("Lista de compas:");
-  
-  if(adicionaItem !== "") {
-  
-    listaCompras.push(adicionaItem);
-  }
-  
-  if (removeItem >= 0 && removeItem < listaCompras.length) {
-  
-    listaCompras.splice(removeItem, 1);
-  }
-  
-  listaCompras.forEach( (elementos, x) => {
-  
-    console.log(`${x}. ${elementos} `);
-  
-  });
+        return console.log("The grocery list is empty.");
+    } else {
+      
+        console.log("Grocery List:");
+        
+        return compras.forEach((elementos, id) => {
+        
+            console.log(`${id}. ${elementos}`);
+        
+        });
 
-  
-  return listaCompras;
+    
+    }
+
 }
 
-rastreaCompras(compras,"Farinha",3);
+function addItem(Item) {
+
+    console.log(`${Item} added to the grocery list.`);
+    
+    return compras.push(Item);
+}
+
+function removeItem(Item) {
+    
+    if (compras.indexOf(Item) === -1) {
+    
+        return console.log(`${Item} is not in the grocery list.`);
+    } else{
+        console.log(`${Item} removed from the grocery list.`);
+        return compras.splice(compras.indexOf(Item), 1);
+    }
+}
+
+viewList();
+addItem("Milk");
+addItem("Bread");
+addItem("Eggs");
+viewList();
+removeItem("Bread");
+viewList();
+removeItem("Cheese");
